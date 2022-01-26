@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import classes from './TextareaGroup.module.css';
+import classes from './Textarea.module.css';
 
-const TextareaGroup = (props) => {
+const Textarea = (props) => {
 	return (
 		<div className={classes.control}>
 			<label htmlFor={props.id}>{props.label}</label>
@@ -12,9 +12,9 @@ const TextareaGroup = (props) => {
 	);
 };
 
-export default TextareaGroup;
+export default Textarea;
 
-TextareaGroup.propTypes = {
+Textarea.propTypes = {
 	id: PropTypes.string.isRequired,
 	label: PropTypes.string
 };

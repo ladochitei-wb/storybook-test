@@ -1,13 +1,13 @@
 import React from "react";
 
-import InputGroup from "../components/InputGroup/InputGroup";
+import Input from "../components/Input/Input";
 
 export default {
-	title: 'Example/InputGroup',
-	component: InputGroup
+	title: 'Example/Input',
+	component: Input
 };
 
-const Template = (args) => <InputGroup {...args} />;
+const Template = (args) => <Input {...args} />;
 
 export const TitleInput = Template.bind({});
 TitleInput.args = {

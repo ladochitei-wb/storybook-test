@@ -1,11 +1,11 @@
 import React from "react";
 import { within, userEvent } from '@storybook/testing-library';
 import EventForm from "../components/EventForm/EventForm";
-import * as InputGroupStories from "./InputGroup.stories";
-import * as TextareaGroupStories from "./TextareaGroup.stories";
+import * as InputStories from "./Input.stories";
+import * as TextareaStories from "./Textarea.stories";
 
 export default {
-	title: 'Example/EventForm',
+	title: 'EventForm',
 	component: EventForm
 };
 
@@ -17,9 +17,9 @@ Default.args = {
 		console.log('submit');
 		console.log(data);
 	},
-	...InputGroupStories.TitleInput,
-	...InputGroupStories.AddressInput,
-	...TextareaGroupStories.Description,
+	...InputStories.TitleInput,
+	...InputStories.AddressInput,
+	...TextareaStories.Description,
 };
 
 // using the play function

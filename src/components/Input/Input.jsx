@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import classes from './InputGroup.module.css';
+import classes from './Input.module.css';
 
-const InputGroup = (props) => {
+const Input = (props) => {
 	return (
 		<div className={classes.control}>
 			<label htmlFor={props.id}>{props.label}</label>
@@ -11,9 +11,9 @@ const InputGroup = (props) => {
 	);
 };
 
-export default InputGroup;
+export default Input;
 
-InputGroup.propTypes = {
+Input.propTypes = {
 	/**
 	 * The id of the input, used also for label tag
 	 */

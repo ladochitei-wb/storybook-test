@@ -7,8 +7,8 @@ to install the dependencies
 to run the app; Open [localhost:3000](http://localhost:3000) in order to view the app in browser.
 
 For the moment there are 2 paths available:
-* / - loads Homepage from src/pages
-* /new-event - loads NewEvent from src/pages
+* [/](http://localhost:3000/) - loads Homepage from src/pages
+* [/new-event](http://localhost:3000/new-event) - loads NewEvent from src/pages
 
 ### `npm run storybook`
 to start Storybook in development mode; Open [localhost:6006](http://localhost:6006)

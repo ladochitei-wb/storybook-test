@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Button } from '../components/Button/Button';
+import { Button } from "./Button";
+import {userEvent, screen, fireEvent} from "@storybook/testing-library";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -9,6 +9,15 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  parameters: {
+    backgrounds: {
+      values: [
+        { name: 'red', value: '#e89b9b' },
+        { name: 'green', value: '#98d598' },
+        { name: 'blue', value: '#8282ee' },
+      ]
+    }
   },
 };
 
@@ -22,6 +31,13 @@ Primary.args = {
   label: 'Button',
   onClick: () => { console.log('Primary button - clicked!'); }
 };
+Primary.decorators = [
+	(Story) => (
+		<div style={{ padding: '20px' }}>
+			<Story />
+		</div>
+	)
+]
 
 export const Secondary = Template.bind({});
 Secondary.args = {
@@ -48,3 +64,19 @@ Medium.args = {
     console.log('Medium Button - clicked!');
   }
 };
+
+export const Click = Template.bind({});
+Click.args = {
+	...Primary.args
+};
+Click.play = async () => {
+	await userEvent.click(screen.getByRole('button'));
+}
+
+export const FireEvent = Template.bind({});
+FireEvent.args = {
+	...Primary.args
+};
+FireEvent.play = async () => {
+	await fireEvent.click(screen.getByRole('button'));
+}

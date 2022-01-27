@@ -1,12 +1,37 @@
 import React from "react";
 import { within, userEvent } from '@storybook/testing-library';
-import EventForm from "../components/EventForm/EventForm";
-import * as InputStories from "./Input.stories";
-import * as TextareaStories from "./Textarea.stories";
+import { Title, Subtitle, Description, Primary, ArgsTable, Stories, PRIMARY_STORY } from '@storybook/addon-docs'
+import EventForm from "./EventForm";
+import Input from "../Input/Input";
+import Textarea from "../Textarea/Textarea";
+import * as InputStories from "../Input/Input.stories";
+import * as TextareaStories from "../Textarea/Textarea.stories";
 
 export default {
 	title: 'EventForm',
-	component: EventForm
+	component: EventForm,
+	decorators: [
+		(Story) => (
+			<section style={{ padding: '10px', backgroundColor: '#fcf3f6' }}>
+				<Story />
+			</section>
+		)
+	],
+	subcomponents: { Input, Textarea },
+	parameters: {
+		docs: {
+			page: () => (
+				<>
+					<Title>Event form component</Title>
+					<Subtitle>These are stories for EventForm component</Subtitle>
+					<Description>This component is used for creating new events.</Description>
+					<Primary/>
+					<ArgsTable story={PRIMARY_STORY}/>
+					<Stories/>
+				</>
+			)
+		}
+	}
 };
 
 const Template = (args) => <EventForm {...args} />;
